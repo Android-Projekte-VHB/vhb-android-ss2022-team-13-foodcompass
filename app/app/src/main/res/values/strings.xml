@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FoodCompass</string>
+    <string name="fruehstueck">Fruehstueck</string>
+    <string name="myfoodcompass">MyFoodCompass</string>
+    <string name="g">Gramm</string>
+    <string name="l">Liter</string>
+    <string name="mittagessen">Mittagessen</string>
+    <string name="fr_hst_ck">Frühstück</string>
+    <string name="abendessen">Abendessen</string>
 </resources>
