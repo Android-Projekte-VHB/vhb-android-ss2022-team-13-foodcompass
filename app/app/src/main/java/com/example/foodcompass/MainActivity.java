@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     /*HalfGauge tacho;
     com.ekn.gruzer.gaugelibrary.Range rangeOne, rangeTwo, rangeThree;
     int setGraphic;*/
-    FloatingActionButton btn_scan;
     CardView breakfastButton, lunchButton, dinnerButton, snackButton;
 
 
@@ -25,16 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initUi();
 
-        /*
-        btn_scan = findViewById(R.id.scannerButton);
-        btn_scan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LunchAddActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
+
 
         //Tacho anzeige hier werden die Bereiche festgelegt (Farbe, Werte, etc.)
 

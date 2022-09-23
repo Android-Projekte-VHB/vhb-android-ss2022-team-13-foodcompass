@@ -21,7 +21,6 @@ import java.util.Objects;
 
 public class DetailDialogueFragment extends DialogFragment {
 
-
     TextView carbs;
     TextView fat;
     TextView protein;
@@ -78,7 +77,7 @@ public class DetailDialogueFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 DetailDialogueFragment.this.getDialog().dismiss();
-                if(!mengenAngbe.getText().toString().isEmpty()) {
+                if (!mengenAngbe.getText().toString().isEmpty()) {
                     for (int i = 0; i < Integer.valueOf(mengenAngbe.getText().toString()); i++) {
                         listener.onObjectAdded(object);
                     }
