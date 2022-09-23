@@ -17,7 +17,7 @@
         android:theme="@style/Theme.FoodCompass"
         tools:targetApi="31">
         <activity
-            android:name=".LunchAddActivity"
+            android:name=".FoodAddActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.foodcompass"
         minSdk 33
-        targetSdk 33
+        targetSdk 30
         versionCode 1
         versionName "1.0"
 

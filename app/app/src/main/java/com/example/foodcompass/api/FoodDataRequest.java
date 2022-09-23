@@ -94,9 +94,18 @@ public class FoodDataRequest {
             // Der Name des aktuelle gültigen Wetter-Icons versteckt sich auf einer tieferen Ebene des JSONObject
             String nutriLetter = response.getJSONObject("product").getString("nutriscore_grade");
             String productId = response.getString("code");
+            float carbs = (float) response.getJSONObject("product").getJSONObject("nutriments").getLong("carbohydrates");
+            float fat = (float) response.getJSONObject("product").getJSONObject("nutriments").getLong("fat");
+            float proteins = (float) response.getJSONObject("product").getJSONObject("nutriments").getLong("proteins");
+            float sugars = (float) response.getJSONObject("product").getJSONObject("nutriments").getLong("sugars");
 
 
-            return new FoodObject(name, meal, FoodObject.NutriScore.getNutriscoreForLetter(nutriLetter), productId);
+            FoodObject result = new FoodObject(name, meal, FoodObject.NutriScore.getNutriscoreForLetter(nutriLetter), productId);
+            result.setCarbs(carbs);
+            result.setFat(fat);
+            result.setProtein(proteins);
+            result.setSugar(sugars);
+            return result;
         } catch (JSONException exception) {
 
             return new FoodObject("Fehler", Meal.BREAKFAST, FoodObject.NutriScore.E, "00");
@@ -115,7 +124,7 @@ public class FoodDataRequest {
             e.printStackTrace();
         }
 
-        return  result;
+        return result;
     }
 
     /**
