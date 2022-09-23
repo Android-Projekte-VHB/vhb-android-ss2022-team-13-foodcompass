@@ -10,6 +10,7 @@ import com.example.foodcompass.foodobject.FoodObject;
 public abstract class FoodDataBase //extends RoomDatabase////
  {
 
-    //public abstract FoodObjectDAO foodsDao();
+  //public abstract FoodObjectDAO foodsDao();
+
 
 }
