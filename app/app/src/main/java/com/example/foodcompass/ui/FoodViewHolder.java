@@ -12,6 +12,8 @@ import com.example.foodcompass.foodobject.FoodObject;
 
 public class FoodViewHolder extends RecyclerView.ViewHolder {
 
+    // Der FoodViewHolder sorgt zusammen mit dem FoodAdapter dafür, dass das Essen in der RecyclerView anzeigt und verwaltet wird
+
     private TextView nameTV;
     private ViewHolderListener listener;
     private ConstraintLayout constraintLayout;

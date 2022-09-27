@@ -19,6 +19,7 @@ import com.example.foodcompass.foodobject.FoodObject;
 
 import java.util.Objects;
 
+// Die Activity initalisiert das Dialog-Fenster, welches aufploppt nachdem man auf ein bestimmtes Lebensmittel in der Liste geklickt hat
 public class DetailDialogueFragment extends DialogFragment {
 
     TextView carbs;

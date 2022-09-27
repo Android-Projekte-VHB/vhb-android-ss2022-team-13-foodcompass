@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> implements FoodViewHolder.ViewHolderListener {
 
+    // DeR Foodadapter sorgert zusammen mit dem FoodViewHolder dafür, dass das Essen in der RecyclerView verwaltet und angezeigt wird
+
     private ArrayList<FoodObject> savedFoods;
     private AdapterListener listener;
 

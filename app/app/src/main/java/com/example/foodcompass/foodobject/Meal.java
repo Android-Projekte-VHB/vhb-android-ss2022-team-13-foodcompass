@@ -2,6 +2,8 @@ package com.example.foodcompass.foodobject;
 
 public enum Meal {
 
+    // Das Enum gibt an, um welche Mahlzeit es sich handelt
+
     BREAKFAST("Frühstück"),
     LUNCH("Mittagessen"),
     DINNER("Abendessen"),

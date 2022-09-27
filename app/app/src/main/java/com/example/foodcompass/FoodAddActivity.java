@@ -22,6 +22,9 @@ import java.util.List;
 
 public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.AdapterListener, DetailDialogueFragment.DetailDialogListener {
 
+    // Diese Activity ermöglicht es Essen zu der App hinzuzufügen
+
+
     EditText searchBar;
     RecyclerView suggestions;
     ArrayList<FoodObject> foodList;
@@ -41,6 +44,7 @@ public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.Ad
 
     }
 
+    //Hier werden die einzelnen Elemente des UIs intialisiert, um ein bestimmtes Essen auszuwählen und zu suchen
     public void initUi(){
         addedFoodList = new ArrayList<>();
         Bundle b = getIntent().getExtras();

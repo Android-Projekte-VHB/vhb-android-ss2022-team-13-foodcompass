@@ -22,8 +22,7 @@ import java.util.List;
 
 public class FoodDataRequest {
 
-    //https://de.openfoodfacts.org/cgi/search.pl?action=process&search_terms={TERM}&sort_by=unique_scans_n&page_size=5&json=true
-    //https://de.openfoodfacts.org/api/v0/product/{ID}.json
+    // Hier wird der API-Request ausgeführt
 
     private static final String REQUEST_URL = "https://de.openfoodfacts.org/cgi/search.pl?action=process&search_terms={TERM}&sort_by=unique_scans_n&page_size=5&json=true";
     private static final String ID_URL = "https://de.openfoodfacts.org/api/v0/product/{ID}.json";
@@ -42,6 +41,8 @@ public class FoodDataRequest {
         this.meal = meal;
     }
 
+    // Mithilfe des Volley-Frameworks werden die Informationen aus dem JSON ausgelesen, hier mithilfe der Produkt ID
+    // Dies ist für das finden der Produkte mit dem QR-Code wichitg.
 
     public void singleRun(RequestListener listener) {
         RequestQueue queue = Volley.newRequestQueue(context);
@@ -58,6 +59,9 @@ public class FoodDataRequest {
         }
     }
 
+    //Mithilfe des Volley-Frameworks werden die Informationen aus dem JSON ausgelesen, hier mithilfe eines Suchbegriffs
+    // Dabei werden fünf verschiedene Produkte aufgelistet
+
     public void groupRequest(RequestListener listener) {
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = REQUEST_URL.replace("{TERM}", name);
@@ -71,6 +75,8 @@ public class FoodDataRequest {
 
     }
 
+
+    // Hier werden die Informationen zu einem FoodObject zusammengestellt
 
     private FoodObject getFoodDataFromResponse(JSONObject response) {
         try {

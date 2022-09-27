@@ -6,14 +6,10 @@ import androidx.room.PrimaryKey;
 
 
 
-//@Entity(tableName = "foodObjects")
+// Die Klasse stellt ein einzelnes FoodObject dar, also ein Lebensmittel, das in der App gesucht werden kann
 public class FoodObject {
 
     public final String Name;
-    //@ColumnInfo(name ="meal")
-
-    //@PrimaryKey
-    //@NonNull
     public int id = 0;
     public String productId;
     public Meal meal;
