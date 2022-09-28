@@ -28,7 +28,7 @@ public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.Ad
     EditText searchBar;
     RecyclerView suggestions;
     ArrayList<FoodObject> foodList;
-    FoodAdapter  foodAdapter;
+    FoodAdapter foodAdapter;
     ImageView magnifyingGlass;
     FloatingActionButton fab;
     String meal;
@@ -45,7 +45,7 @@ public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.Ad
     }
 
     //Hier werden die einzelnen Elemente des UIs intialisiert, um ein bestimmtes Essen auszuwählen und zu suchen
-    public void initUi(){
+    public void initUi() {
         addedFoodList = new ArrayList<>();
         Bundle b = getIntent().getExtras();
         meal = b.getString("Meal");
@@ -69,10 +69,11 @@ public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.Ad
             @Override
             public void onClick(View view) {
                 foodList.clear();
-                Log.d("test","test");
-                String searchText ="";
-                if(searchBar.getText().toString() != null){
-                searchText = searchBar.getText().toString();}
+                Log.d("test", "test");
+                String searchText = "";
+                if (searchBar.getText().toString() != null) {
+                    searchText = searchBar.getText().toString();
+                }
                 FoodDataRequest dataRequest = new FoodDataRequest(searchText, getApplicationContext(), Meal.getMeal(meal));
                 dataRequest.groupRequest(new FoodDataRequest.RequestListener() {
                     @Override
@@ -80,14 +81,14 @@ public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.Ad
                         foodList.add(data);
                         foodAdapter.setEntries(foodList);
                         foodAdapter.notifyDataSetChanged();
-                        Log.d("Test","test2");
+                        Log.d("Test", "test2");
                     }
 
                     @Override
                     public void onGroupResult(List<String> list) {
                         FoodDataRequest request;
-                        for(String s: list){
-                            request = new FoodDataRequest(s ,getApplicationContext(),Meal.getMeal(meal));
+                        for (String s : list) {
+                            request = new FoodDataRequest(s, getApplicationContext(), Meal.getMeal(meal));
                             request.singleRun(this);
                         }
 

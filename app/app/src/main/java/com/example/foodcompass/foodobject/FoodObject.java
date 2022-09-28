@@ -1,17 +1,22 @@
 package com.example.foodcompass.foodobject;
+
+
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-
+import java.util.Objects;
 
 // Die Klasse stellt ein einzelnes FoodObject dar, also ein Lebensmittel, das in der App gesucht werden kann
+
+@Entity(tableName = "foodObjects")
 public class FoodObject {
 
-    public final String Name;
-    public int id = 0;
+    @PrimaryKey
+    @NonNull
+    public int id;
     public String productId;
+    public final String Name;
     public Meal meal;
     public NutriScore nutriScore;
     public float carbs;
@@ -36,21 +41,20 @@ public class FoodObject {
     }
 
 
-
-    public FoodObject(String Name, Meal meal, NutriScore nutriScore,String productId){
-        this.Name= Name;
-        this.meal=meal;
-        this.nutriScore=nutriScore;
-        this.productId=productId;
+    public FoodObject(String Name, Meal meal, NutriScore nutriScore, String productId) {
+        this.Name = Name;
+        this.meal = meal;
+        this.nutriScore = nutriScore;
+        this.productId = productId;
         id++;
-        carbs=0;
-        fat=0;
-        protein=0;
-        sugar=0;
+        carbs = 0;
+        fat = 0;
+        protein = 0;
+        sugar = 0;
     }
 
 
-    public enum NutriScore{
+    public enum NutriScore {
 
         A(5, "a"),
         B(4, "b"),
@@ -59,20 +63,35 @@ public class FoodObject {
         E(1, "e");
 
         private int score = 0;
-        private String nutriLetter ="";
-        NutriScore(int score, String nutriLetter){
+        private String nutriLetter = "";
+
+        NutriScore(int score, String nutriLetter) {
             this.score = score;
             this.nutriLetter = nutriLetter;
         }
 
-        public static NutriScore getNutriscoreForLetter(String letter){
-            for(NutriScore nutri: NutriScore.values()){
-                if(letter == nutri.nutriLetter ){
+        public static NutriScore getNutriscoreForLetter(String letter) {
+            for (NutriScore nutri : NutriScore.values()) {
+                if (Objects.equals(letter, nutri.nutriLetter)) {
                     return nutri;
                 }
             }
             return null;
 
+        }
+
+        public static NutriScore getNutriscoreForScore(int score) {
+            for (NutriScore nutri : NutriScore.values()) {
+                if (score == nutri.score) {
+                    return nutri;
+                }
+            }
+            return null;
+
+        }
+
+        public int getScore() {
+            return score;
         }
 
     }

@@ -1,6 +1,5 @@
 package com.example.foodcompass;
 
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -28,7 +27,7 @@ public class DetailDialogueFragment extends DialogFragment {
     TextView sugar;
     FoodObject object;
     TextView foodName;
-    EditText mengenAngbe;
+    EditText amount;
     Button addFoodButton;
     DetailDialogListener listener;
 
@@ -72,14 +71,14 @@ public class DetailDialogueFragment extends DialogFragment {
         sugar = Objects.requireNonNull(getDialog()).findViewById(R.id.Zucker);
         protein = Objects.requireNonNull(getDialog()).findViewById(R.id.Eiweiß);
         foodName = Objects.requireNonNull(getDialog()).findViewById(R.id.food_name);
-        mengenAngbe = Objects.requireNonNull(getDialog()).findViewById(R.id.Mengen_Textfeld);
+        amount = Objects.requireNonNull(getDialog()).findViewById(R.id.Mengen_Textfeld);
         addFoodButton = Objects.requireNonNull(getDialog()).findViewById(R.id.add_food_btn);
         addFoodButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DetailDialogueFragment.this.getDialog().dismiss();
-                if (!mengenAngbe.getText().toString().isEmpty()) {
-                    for (int i = 0; i < Integer.valueOf(mengenAngbe.getText().toString()); i++) {
+                if (!amount.getText().toString().isEmpty()) {
+                    for (int i = 0; i < Integer.valueOf(amount.getText().toString()); i++) {
                         listener.onObjectAdded(object);
                     }
                 }

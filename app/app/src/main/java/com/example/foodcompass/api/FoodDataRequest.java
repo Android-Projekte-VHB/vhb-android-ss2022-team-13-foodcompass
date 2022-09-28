@@ -14,9 +14,6 @@ import com.android.volley.toolbox.Volley;
 import com.example.foodcompass.foodobject.FoodObject;
 import com.example.foodcompass.foodobject.Meal;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
