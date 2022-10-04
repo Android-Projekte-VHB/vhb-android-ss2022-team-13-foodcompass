@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton btn_scan;
     CardView lunchCard;
     int nutriScore;
-    int healthyScore = 20;
+    int healthyScore = 70;
     SpeedView tacho;
 
     /*HalfGauge tacho;
@@ -41,15 +41,16 @@ public class MainActivity extends AppCompatActivity {
         tacho = findViewById(R.id.tacho);
         displayNutriScoreOnTacho(healthyScore);
 
+
         lunchCard = findViewById(R.id.mittagessen_cardView);
-        lunchCard.setOnClickListener(new View.OnClickListener() {
+        /*lunchCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LunchAddActivity.class);
                 startActivity(intent);
 
             }
-        });
+        });*/
 
         /*btn_scan = findViewById(R.id.);
         btn_scan.setOnClickListener(new View.OnClickListener() {
@@ -66,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        private int nutriScoreCalculator(int FoodNutriScore) {
+        /*private int nutriScoreCalculator(int FoodNutriScore) {
             
-        }
+        }*/
 
 
 
@@ -115,7 +116,9 @@ public class MainActivity extends AppCompatActivity {
     private void displayNutriScoreOnTacho (int healthyScore) {
         this.healthyScore = healthyScore;
 
-        tacho.speedTo((float)healthyScore);
+        tacho.speedTo((float) healthyScore);
+
+    }
 
     private void initUi(){
         breakfastButton = findViewById(R.id.frühstück_cardView);
