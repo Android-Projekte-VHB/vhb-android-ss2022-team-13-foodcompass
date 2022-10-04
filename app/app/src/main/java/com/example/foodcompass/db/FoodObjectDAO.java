@@ -22,7 +22,7 @@ public interface FoodObjectDAO {
     void deleteFoodObjectById(int id);
 
     // letzten 7 Einträge für Durchschnittswert
-    @Query("SELECT * FROM foodObjects ORDER BY id DESC LIMIT 7")
+    @Query("SELECT * FROM foodObjects ORDER BY nutriScore DESC LIMIT 7")
     FoodObject getFoodObjectsForMean();
 
     @Query("SELECT * FROM foodObjects WHERE id= :id")

@@ -26,8 +26,8 @@ public class FoodObjectDatabaseHelper {
         db.foodDAO().deleteFoodObjectById(id);
     }
 
-    public void getObject(int id) {
-        db.foodDAO().getFoodObject(id);
+    public FoodObject getObject(int id) {
+        return db.foodDAO().getFoodObject(id);
     }
 
     public void getObjectMean() {

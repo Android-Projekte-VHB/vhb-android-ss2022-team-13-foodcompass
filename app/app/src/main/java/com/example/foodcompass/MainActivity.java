@@ -2,52 +2,40 @@ package com.example.foodcompass;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.foodcompass.db.FoodObjectDAO;
+import com.example.foodcompass.db.FoodObjectDatabaseHelper;
+import com.example.foodcompass.foodobject.FoodObject;
 import com.example.foodcompass.foodobject.Meal;
 import com.github.anastr.speedviewlib.SpeedView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
-
-    int setGraphic;
     FloatingActionButton btn_scan;
-    CardView lunchCard;
-    int nutriScore;
-    int healthyScore = 70;
+    int healthyScore;
     SpeedView tacho;
+    FoodObjectDatabaseHelper helper;
 
-    /*HalfGauge tacho;
-    com.ekn.gruzer.gaugelibrary.Range rangeOne, rangeTwo, rangeThree;
-    int setGraphic;*/
     CardView breakfastButton, lunchButton, dinnerButton, snackButton;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        initUi();
         tacho = findViewById(R.id.tacho);
+       // calculateCurrentNutriScore();
         displayNutriScoreOnTacho(healthyScore);
 
-
-        lunchCard = findViewById(R.id.mittagessen_cardView);
-        /*lunchCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, FoodAddActivity.class);
-                startActivity(intent);
-
-            }
-        });*/
 
         /*btn_scan = findViewById(R.id.);
         btn_scan.setOnClickListener(new View.OnClickListener() {
@@ -58,28 +46,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        initUi();
-
-
-
-
-
-        /*private int nutriScoreCalculator(int FoodNutriScore) {
-            
-        }*/
-
-
-
 
         /*Barcode scanner per click auf ScanBtn
         btn_scan = findViewById(R.id.scannerButton);
         btn_scan.setOnClickListener(v->{
             scanBarcode();
         });
-
-
-
-
     }
 
     private void scanBarcode() {
@@ -109,15 +81,18 @@ public class MainActivity extends AppCompatActivity {
          */
     }
 
-
-    private void displayNutriScoreOnTacho (int healthyScore) {
-        this.healthyScore = healthyScore;
-
-        tacho.speedTo((float) healthyScore);
-
+    private void calculateCurrentNutriScore() {
+        FoodObject object = helper.getObject(0);
+        Log.d("objectMean", object.toString());
     }
 
-    private void initUi(){
+
+    private void displayNutriScoreOnTacho(int healthyScore) {
+        this.healthyScore = healthyScore;
+        tacho.speedTo((float) healthyScore);
+    }
+
+    private void initUi() {
         breakfastButton = findViewById(R.id.frühstück_cardView);
         lunchButton = findViewById(R.id.mittagessen_cardView);
         dinnerButton = findViewById(R.id.abendessen_cardView);
@@ -133,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         lunchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("Meal",Meal.LUNCH.germanName);
+                i.putExtra("Meal", Meal.LUNCH.germanName);
                 startActivity(i);
             }
         });
@@ -147,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
         snackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                i.putExtra("Meal",Meal.SNACK.germanName);
+                i.putExtra("Meal", Meal.SNACK.germanName);
                 startActivity(i);
             }
         });

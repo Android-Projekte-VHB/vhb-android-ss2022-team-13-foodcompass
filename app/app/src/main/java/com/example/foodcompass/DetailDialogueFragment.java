@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.foodcompass.db.FoodObjectDatabaseHelper;
 import com.example.foodcompass.foodobject.FoodObject;
 
 import java.util.Objects;
@@ -30,7 +32,7 @@ public class DetailDialogueFragment extends DialogFragment {
     EditText amount;
     Button addFoodButton;
     DetailDialogListener listener;
-
+    FoodObjectDatabaseHelper helper;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -80,6 +82,8 @@ public class DetailDialogueFragment extends DialogFragment {
                 if (!amount.getText().toString().isEmpty()) {
                     for (int i = 0; i < Integer.valueOf(amount.getText().toString()); i++) {
                         listener.onObjectAdded(object);
+                       // helper.addObject(object);
+                        // System.out.println(object.Name);
                     }
                 }
             }
