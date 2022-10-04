@@ -55,7 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
+            <LinearLayout
+                android:orientation="vertical"
                 android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -71,28 +72,37 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@+id/tacho"
-                    android:layout_alignEnd="@+id/tacho"
-                    android:layout_marginStart="26dp"
-                    android:layout_marginEnd="32dp"
+                    android:layout_gravity="center"
                     android:paddingTop="50dp"
                     android:text="SPRUCH"
                     android:textAlignment="center"
                     android:textSize="28dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    >
 
-                <com.ekn.gruzer.gaugelibrary.HalfGauge
+                </TextView>
+
+                <com.github.anastr.speedviewlib.SpeedView
                     android:id="@+id/tacho"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="20dp"
+                    app:sv_unit="HEALTHYSCORE"
+                    app:sv_lowSpeedPercent="33"
+                    app:sv_mediumSpeedPercent="67"
+                    app:sv_lowSpeedColor="@color/TachoRed"
+                    app:sv_mediumSpeedColor="@color/TachoYellow"
+                    app:sv_highSpeedColor="@color/TachoGreen"
+                    app:sv_unitTextColor="@color/cardview_dark_background"
+                    app:sv_unitUnderSpeedText="true"
+                    app:sv_withTremble="false">
 
+                </com.github.anastr.speedviewlib.SpeedView>
 
-                </com.ekn.gruzer.gaugelibrary.HalfGauge>
-
-            </RelativeLayout>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/mahlzeit"
