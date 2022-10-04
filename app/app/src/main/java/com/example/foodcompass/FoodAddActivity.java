@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.foodcompass.api.FoodDataRequest;
 import com.example.foodcompass.foodobject.FoodObject;
@@ -20,7 +20,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LunchAddActivity extends AppCompatActivity {
+public class FoodAddActivity extends AppCompatActivity implements FoodAdapter.AdapterListener, DetailDialogueFragment.DetailDialogListener {
+
+    // Diese Activity ermöglicht es Essen zu der App hinzuzufügen
+
 
     EditText searchBar;
     RecyclerView suggestions;
@@ -28,6 +31,10 @@ public class LunchAddActivity extends AppCompatActivity {
     FoodAdapter foodAdapter;
     ImageView magnifyingGlass;
     FloatingActionButton fab;
+    String meal;
+    TextView header;
+    List<FoodObject> addedFoodList;// Diese Liste muss durch die Liste in der Datenbank ersetzt werden und dann mit der Tachoanzeige verbundnen werden
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +44,18 @@ public class LunchAddActivity extends AppCompatActivity {
 
     }
 
+    //Hier werden die einzelnen Elemente des UIs intialisiert, um ein bestimmtes Essen auszuwählen und zu suchen
     public void initUi() {
+        addedFoodList = new ArrayList<>();
+        Bundle b = getIntent().getExtras();
+        meal = b.getString("Meal");
+        header = findViewById(R.id.textHeader);
+        header.setText(meal);
         foodList = new ArrayList<>();
         searchBar = findViewById(R.id.lunchSearchbar);
         suggestions = findViewById(R.id.recyclerViewLunchId);
         magnifyingGlass = findViewById(R.id.magnifyingGlassLunch);
-        foodAdapter = new FoodAdapter();
+        foodAdapter = new FoodAdapter(this);
 
         suggestions.setAdapter(foodAdapter);
 
@@ -61,7 +74,7 @@ public class LunchAddActivity extends AppCompatActivity {
                 if (searchBar.getText().toString() != null) {
                     searchText = searchBar.getText().toString();
                 }
-                FoodDataRequest dataRequest = new FoodDataRequest(searchText, getApplicationContext(), Meal.LUNCH);
+                FoodDataRequest dataRequest = new FoodDataRequest(searchText, getApplicationContext(), Meal.getMeal(meal));
                 dataRequest.groupRequest(new FoodDataRequest.RequestListener() {
                     @Override
                     public void onResult(FoodObject data) {
@@ -75,7 +88,7 @@ public class LunchAddActivity extends AppCompatActivity {
                     public void onGroupResult(List<String> list) {
                         FoodDataRequest request;
                         for (String s : list) {
-                            request = new FoodDataRequest(s, getApplicationContext(), Meal.LUNCH);
+                            request = new FoodDataRequest(s, getApplicationContext(), Meal.getMeal(meal));
                             request.singleRun(this);
                         }
 
@@ -87,4 +100,16 @@ public class LunchAddActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onElementClicked(int position, FoodObject foodObject) {
+        DetailDialogueFragment dialogue = new DetailDialogueFragment();
+        dialogue.setFood(foodObject);
+        dialogue.show(getSupportFragmentManager(), "Detail");
+
+    }
+
+    @Override
+    public void onObjectAdded(FoodObject object) {
+        addedFoodList.add(object);
+    }
 }

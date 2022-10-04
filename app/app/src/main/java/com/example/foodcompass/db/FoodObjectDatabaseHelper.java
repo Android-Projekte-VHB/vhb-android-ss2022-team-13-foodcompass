@@ -8,21 +8,29 @@ import com.example.foodcompass.foodobject.FoodObject;
 
 public class FoodObjectDatabaseHelper {
 
-    private static final String DATABASE_NAME="tracking-db";
+    private static final String DATABASE_NAME = "food-db";
     private final Context context;
     private FoodDataBase db;
 
-    public FoodObjectDatabaseHelper(Context context){
+    public FoodObjectDatabaseHelper(Context context) {
         this.context = context;
-        //db = Room.databaseBuilder(context, FoodDataBase.class, DATABASE_NAME).allowMainThreadQueries().build();
+        db = Room.databaseBuilder(context, FoodDataBase.class, DATABASE_NAME).allowMainThreadQueries().build();
     }
 
-    public void addOrUpdate(FoodObject food){
-        //FoodObject foods = db.foodsDao().getFoodObject(food.Name);
-        //if(foods == null){
-        //    db.foodsDao().insertFoodObject(food);
-        //} else{
-            //db.foodsDao().updateFoodObject(food);
-        //}
+
+    public void addObject(FoodObject food) {
+        db.foodDAO().insertFoodObject(food);
+    }
+
+    public void removeObject(int id) {
+        db.foodDAO().deleteFoodObjectById(id);
+    }
+
+    public void getObject(int id) {
+        db.foodDAO().getFoodObject(id);
+    }
+
+    public void getObjectMean() {
+        db.foodDAO().getFoodObjectsForMean();
     }
 }

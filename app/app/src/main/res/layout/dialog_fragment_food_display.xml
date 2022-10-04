@@ -49,18 +49,7 @@
             app:layout_constraintTop_toBottomOf="@id/untertitel_nährwerte"
             app:layout_constraintBottom_toTopOf="@id/add_food_btn">
 
-            <TextView
-                android:id="@+id/Brennwert"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Brennwert"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/Eiweiß"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toTopOf="@id/nutrition_frame">
 
-            </TextView>
 
             <TextView
                 android:id="@+id/Eiweiß"
@@ -71,7 +60,8 @@
                 android:textSize="20dp"
                 app:layout_constraintBottom_toTopOf="@id/Kohlenhydrate"
                 app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/Brennwert">
+                app:layout_constraintTop_toTopOf="@id/nutrition_frame"
+                >
 
             </TextView>
 
@@ -82,24 +72,26 @@
                 android:layout_marginStart="10dp"
                 android:text="Kohlenhydrate"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/davon_Zucker"
+                app:layout_constraintBottom_toTopOf="@id/Zucker"
                 app:layout_constraintStart_toStartOf="@id/nutrition_frame"
                 app:layout_constraintTop_toBottomOf="@id/Eiweiß">
 
             </TextView>
 
             <TextView
-                android:id="@+id/davon_Zucker"
+                android:id="@+id/Zucker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:text="davon_Zucker"
+                android:text="Zucker"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toTopOf="@id/Fett"
                 app:layout_constraintStart_toStartOf="@id/nutrition_frame"
                 app:layout_constraintTop_toBottomOf="@id/Kohlenhydrate">
 
             </TextView>
+
+
 
             <TextView
                 android:id="@+id/Fett"
@@ -108,74 +100,13 @@
                 android:layout_marginStart="10dp"
                 android:text="Fett"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/davon_gesättigte_Fettsäuren"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/davon_Zucker">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/davon_gesättigte_Fettsäuren"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="davon gesättigte Fettsäuren"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/Ballaststoffe"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/Fett">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/Ballaststoffe"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Ballaststoffe"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/Natrium"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/davon_gesättigte_Fettsäuren">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/Natrium"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Natrium"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/Calcium"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/Ballaststoffe">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/Calcium"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Calcium + Wert"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toTopOf="@id/Vitamin_B12"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/Natrium">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/Vitamin_B12"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Vitamin B12"
-                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@id/Kohlenhydrate"
                 app:layout_constraintBottom_toBottomOf="@id/nutrition_frame"
-                app:layout_constraintStart_toStartOf="@id/nutrition_frame"
-                app:layout_constraintTop_toBottomOf="@id/Calcium"></TextView>
+                app:layout_constraintStart_toStartOf="@id/nutrition_frame">
+
+            </TextView>
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -208,6 +139,7 @@
 
 
         <EditText
+            android:id="@+id/Mengen_Textfeld"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
