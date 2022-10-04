@@ -1,23 +1,14 @@
 package com.example.foodcompass;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
-
-
 import android.content.Intent;
-
-
-
 import android.os.Bundle;
 import android.view.View;
 
-
-
-import com.github.anastr.speedviewlib.SpeedView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.example.foodcompass.foodobject.Meal;
-
+import com.github.anastr.speedviewlib.SpeedView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -51,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         lunchCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LunchAddActivity.class);
+                Intent intent = new Intent(MainActivity.this, FoodAddActivity.class);
                 startActivity(intent);
 
             }
