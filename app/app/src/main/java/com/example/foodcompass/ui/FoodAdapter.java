@@ -12,12 +12,16 @@ import com.example.foodcompass.foodobject.FoodObject;
 
 import java.util.ArrayList;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
+public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> implements FoodViewHolder.ViewHolderListener {
+
+    // DeR Foodadapter sorgert zusammen mit dem FoodViewHolder dafür, dass das Essen in der RecyclerView verwaltet und angezeigt wird
 
     private ArrayList<FoodObject> savedFoods;
+    private AdapterListener listener;
 
-    public FoodAdapter(){
+    public FoodAdapter(AdapterListener listener){
         this.savedFoods = new ArrayList<>();
+        this.listener = listener;
     }
 
     public void setEntries(ArrayList<FoodObject> list){
@@ -29,7 +33,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.food_viewholder_layout,parent,false);
-       return new FoodViewHolder(v);
+       return new FoodViewHolder(v,this);
     }
 
     @Override
@@ -43,5 +47,15 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
         return savedFoods.size();
     }
 
+
+    @Override
+    public void onViewHolderClicked(int position) {
+        listener.onElementClicked(position, savedFoods.get(position));
+    }
+
+
+    public interface AdapterListener{
+        void onElementClicked(int position, FoodObject foodObject);
+    }
 
 }

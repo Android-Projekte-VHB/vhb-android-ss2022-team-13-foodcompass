@@ -1,25 +1,22 @@
 package com.example.foodcompass;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
 
 
 import com.github.anastr.speedviewlib.SpeedView;
+
+import com.example.foodcompass.foodobject.Meal;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.journeyapps.barcodescanner.CaptureActivity;
-import com.journeyapps.barcodescanner.ScanContract;
-import com.journeyapps.barcodescanner.ScanOptions;
 
 public class MainActivity extends AppCompatActivity {
+
 
     int setGraphic;
     FloatingActionButton btn_scan;
@@ -28,11 +25,18 @@ public class MainActivity extends AppCompatActivity {
     int healthyScore = 20;
     SpeedView tacho;
 
+    /*HalfGauge tacho;
+    com.ekn.gruzer.gaugelibrary.Range rangeOne, rangeTwo, rangeThree;
+    int setGraphic;*/
+    CardView breakfastButton, lunchButton, dinnerButton, snackButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         tacho = findViewById(R.id.tacho);
         displayNutriScoreOnTacho(healthyScore);
@@ -55,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+
+        initUi();
+
 
 
 
@@ -104,9 +111,46 @@ public class MainActivity extends AppCompatActivity {
          */
     }
 
+
     private void displayNutriScoreOnTacho (int healthyScore) {
         this.healthyScore = healthyScore;
 
         tacho.speedTo((float)healthyScore);
+
+    private void initUi(){
+        breakfastButton = findViewById(R.id.frühstück_cardView);
+        lunchButton = findViewById(R.id.mittagessen_cardView);
+        dinnerButton = findViewById(R.id.abendessen_cardView);
+        snackButton = findViewById(R.id.snack_cardView);
+        Intent i = new Intent(MainActivity.this, FoodAddActivity.class);
+        breakfastButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("Meal", Meal.BREAKFAST.germanName);
+                startActivity(i);
+            }
+        });
+        lunchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("Meal",Meal.LUNCH.germanName);
+                startActivity(i);
+            }
+        });
+        dinnerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("Meal", Meal.DINNER.germanName);
+                startActivity(i);
+            }
+        });
+        snackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                i.putExtra("Meal",Meal.SNACK.germanName);
+                startActivity(i);
+            }
+        });
+
     }
 }
