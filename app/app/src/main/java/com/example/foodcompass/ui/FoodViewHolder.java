@@ -27,7 +27,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void bindView(FoodObject foodObject){
-        nameTV.setText(foodObject.Name);
+        nameTV.setText(foodObject.name);
         constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

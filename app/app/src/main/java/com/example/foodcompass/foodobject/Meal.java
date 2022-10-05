@@ -8,6 +8,7 @@ public enum Meal {
     LUNCH("Mittagessen"),
     DINNER("Abendessen"),
     SNACK("Snack");
+
     public String germanName;
 
    Meal(String germanName){

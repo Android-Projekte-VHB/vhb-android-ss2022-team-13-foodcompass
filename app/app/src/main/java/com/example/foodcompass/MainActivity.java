@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initUi();
         tacho = findViewById(R.id.tacho);
-       // calculateCurrentNutriScore();
         displayNutriScoreOnTacho(healthyScore);
+
 
 
         /*btn_scan = findViewById(R.id.);
@@ -81,10 +81,14 @@ public class MainActivity extends AppCompatActivity {
          */
     }
 
-    private void calculateCurrentNutriScore() {
-        FoodObject object = helper.getObject(0);
-        Log.d("objectMean", object.toString());
-    }
+   /* private void calculateCurrentNutriScore() {
+        int scores = 0;
+        for (int i = 0; i < 7; i++) {
+            scores =  helper.getObject(i).nutriScore.getScore();
+        }
+        String res = String.valueOf(scores);
+        Log.d("objectMean", res);
+    } */
 
 
     private void displayNutriScoreOnTacho(int healthyScore) {

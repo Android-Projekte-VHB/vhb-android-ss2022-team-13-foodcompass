@@ -16,7 +16,7 @@ public class FoodObject {
     @NonNull
     public int id;
     public String productId;
-    public final String Name;
+    public final String name;
     public Meal meal;
     public NutriScore nutriScore;
     public float carbs;
@@ -41,8 +41,8 @@ public class FoodObject {
     }
 
 
-    public FoodObject(String Name, Meal meal, NutriScore nutriScore, String productId) {
-        this.Name = Name;
+    public FoodObject(String name, Meal meal, NutriScore nutriScore, String productId) {
+        this.name = name;
         this.meal = meal;
         this.nutriScore = nutriScore;
         this.productId = productId;
@@ -62,8 +62,8 @@ public class FoodObject {
         D(2, "d"),
         E(1, "e");
 
-        private int score = 0;
-        private String nutriLetter = "";
+        private int score;
+        private String nutriLetter;
 
         NutriScore(int score, String nutriLetter) {
             this.score = score;
@@ -77,7 +77,6 @@ public class FoodObject {
                 }
             }
             return null;
-
         }
 
         public static NutriScore getNutriscoreForScore(int score) {
@@ -87,12 +86,17 @@ public class FoodObject {
                 }
             }
             return null;
-
         }
 
         public int getScore() {
             return score;
         }
+
+        public String getNutriLetter() {
+            return nutriLetter;
+        }
+
+
 
     }
 

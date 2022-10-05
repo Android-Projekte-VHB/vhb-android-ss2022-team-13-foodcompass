@@ -51,15 +51,9 @@ public class DetailDialogueFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-
-
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
         LayoutInflater inflater = requireActivity().getLayoutInflater();
-
         View v = inflater.inflate(R.layout.dialog_fragment_food_display, null);
-
-
         AlertDialog dialog = builder.setView(v).create();
 
 
@@ -82,8 +76,9 @@ public class DetailDialogueFragment extends DialogFragment {
                 if (!amount.getText().toString().isEmpty()) {
                     for (int i = 0; i < Integer.valueOf(amount.getText().toString()); i++) {
                         listener.onObjectAdded(object);
-                       // helper.addObject(object);
-                        // System.out.println(object.Name);
+              //          helper = new FoodObjectDatabaseHelper(getContext());
+                //        helper.addObject(object);
+                  //      Log.d("test_add_food", object.name);
                     }
                 }
             }
@@ -97,7 +92,7 @@ public class DetailDialogueFragment extends DialogFragment {
 
     public void selectFood() {
         if (object != null) {
-            foodName.setText(object.Name);
+            foodName.setText(object.name);
             fat.setText("Fette: " + object.fat);
             carbs.setText("Kohlenhydrate: " + object.carbs);
             sugar.setText("Zucker: " + object.sugar);
