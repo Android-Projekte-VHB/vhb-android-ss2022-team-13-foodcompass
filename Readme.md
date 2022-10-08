@@ -1,11 +1,5 @@
-# Name Ihrer App
+#FoodCompass
 
-_Beschreiben Sie hier kurz und knapp die wesentlichen Ziele und Funktionen Ihrer Anwendung. Ergänzen Sie einen aussagekräftigen Screenshot und betten Sie eine kurze GIF-Version des Trailers ein. Weitere Hinweise zur Verwendung des Repository finden Sie in der Datei [Todo.md](Todo.md). Entfernen Sie vor der finalen Abgabe Ihres Projekts alle Platzhalter und Hinweise aus den Markdown-Dokumenten._
+FoodCompass
 
-
-## Übersicht über weitere Dokumente
-
-- [_User Guide_ zur App](App.md)
-- [Das Team](Team.md)
-- [Link zum Trailer](https://youtu.be/o_O8NLgfDqY)
-- [APK-Datei der fertigen Version]()
+Eine App die dem Nutzer bei der Ernährung begleiten soll. Die App soll dem Nutzer einen Überblick und ein Feedback bzgl. seiner Ernährung geben. Der Nutzer kann seine Mahlzeiten im Laufe eines Tages eintragen. Dem Nutzer wird anhand eines Healthyscores und in Form eines Tachos ein Feedback über seine Ernährung gegeben. Demnach sieht der Nutzer wie gesund er sich aktuell ernährt.
