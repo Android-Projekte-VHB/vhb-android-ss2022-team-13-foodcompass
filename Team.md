@@ -5,10 +5,11 @@ Viktoria.Stasinski@stud.uni-regensburg.de
 
 War zuständig fur die komplette API-Abfrage und somit auch zuständig für das Suchen und Hinzufügen der Nahrung.
 Klassen:
-- FoodData
 - FoodDataRequest
-- FoodTracker
 - FoodObject
+- FoodViewHolder
+- FoodAdapter
+- DetailDialogueFragment
 - Meal
 - FoodAddActivity
 
@@ -19,7 +20,6 @@ Johannes.Trisch@stud.uni-regensburg.de,
 War zuständig fur die komplette Datenbank und den UI-Initialize.
 Klassen:
 - BarcodeScanActivity
-- DetailFialogueFragment
 - FoodDataBase
 - FoodObjectAttributeTypeConverter
 - FoodObjectDAO
