@@ -1,19 +1,10 @@
-# Name Ihrer App
-
-_Beschreiben Sie entlang der vorgegebenen Struktur Ihre Anwendung. Nutzen Sie dazu Screenshots, Videos und andere, Ihnen sinnvoll erscheinenden Medien. Beginnen Sie mit einer knappen Zusammenfassung, die den durch Ihre App generierten Mehrwert für die intendierten Nutzer\*innen deutlich macht._
-
-## Zielgruppe und Problemstellung
-
-_Beschreiben Sie die Zielgruppe Ihrer Anwendung genauer. Für wen entwickeln Sie die Anwendung und vor welchen Herausforderungen stehen diese Menschen, die nun mit Hilfe Ihrer App bewältigt werden können?_
-
-## Features und Szenarien
-
-_Beschreiben Sie die wichtigsten Funktionen Ihrer Anwendung. Was können die Nutzer\*innen mit Ihrer Anwendung tun? Verwenden Sie zur Beschreibung Beschreiben dieser zentralen Features auch Screenshots oder animierte Gifs aus Ihrer Anwendung. Dokumentieren Sie im Anschluss anhand ausgewählter Szenarien einige ausgesuchte, wichtige Arten der Nutzung der App durch die Zielgruppe. Beschreiben Sie dazu anhand eines gedachten Walkthroughs durch die Anwendung, in welcher Reihenfolge die Nutzer\*innen die genannten Funktionen der Anwendung verwenden, um wichtige Ziele zu erreichen._
-
-## Erreichter Stand
-
-_Beschreiben Sie kurz, ob und wenn ja wie, der erreichte Stand Ihrer Anwendung von dem ursprünglich geplanten Konzept abweicht. Begründen Sie ggf. aufgetreten Abweichungen._
-
-## Weitere Hinweise
-
-_Notieren Sie hier falls nötig weitere Hinweise zur Ihrer App wie Informationen zum Testen Ihrer Anwendung (z.B. vorbereitete Zugangsdaten) oder NUtzungseinschränkungen (z.B. Abhängigkeit von besonderer Hardware)._
+FoodCompass
+Die Foodcompass-App soll den Nutzer auf sein Ernährungsverhalten aufmerksam machen. Sie zeigt in Form eines Healthyscores, wie gesung oder ungesund der Nutzer sich ernährt. Damit bekommt der Nutzer einen Überblick und ein Feedback über seine alltägliche Ernährung.
+Die App ist an alle ausgerichtet, die sich gesund ernähren wollen und sich ein Überlick über ihre Ernährung verschaffen wollen. Die App kann als Essenstagebuch eingesetzt werden, welches ein einfaches Feedback zurückgibt.
+Mit der App hat der Nutzer die Möglichkeit, Mahlzeiten einzutragen und kann diese in Form eines Healthyscores auslesen. Ebenso werden Die Nährwerte angezeigt.
+Beispielszenario:
+Der Nutzer öffnet die App. Er will sein gegessenes Frühstück eintragen. Hierbei wählt er unter "Mahlzeiten" die Kategorie "Frühstück" aus und gibt im nächsten Screen das Essen ein.
+Hier kann der Nutzer nach seinem Essen suchen oder mithilfe eines Barcode scanners einscannen.
+Das Essen wird mit den ganzen Nährwerten ihm angezeigt und er kann diese zur Liste "Frühstück hinzufügen. Diesen Vorgang wird an einem Tag fur jede Mahlzeit wiederholt und dem Nitzer wird anhand des Tachso ein Healthyscore angezeigt.
+Der Tacho rechnet einen durchschnittlichen Wert aus (HealthyScore) und gibt dem Nutzer ein Feedback zu seiner Ernährung.
+Die App konnte nicht vollständig entwickelt werden. Es fehlen geplante Features und Rechnungen.
