@@ -16,12 +16,12 @@ Beim Öffnen der App wird ein Tacho angezeigt, welcher durch eine Custom View er
 
 Der Kalender und der Barcodescanner wurden nur teilweise oder gar nicht umgestetzt, der Tachostand kann sich zudem auch nciht verändern.
 
-(Ein Video hat leider nicht geklappt, da Codeteile nicht vollständig sind)
+
 Der CustomView Tacho:
 ![Screenshot (28)](https://user-images.githubusercontent.com/76117353/194769081-a0633e3e-7eca-411b-a55a-317b1d58287c.png)
 
 Auswahlmöglichkeit der Mahlzeit:
-
+![Screenshot (33)](https://user-images.githubusercontent.com/76117353/194771177-c5ae6f72-bde7-4c25-8eb0-f301057ff2bc.png)
 
 Das DetailDialogueFragement:
 ![Screenshot (29)](https://user-images.githubusercontent.com/76117353/194769223-7f0f250f-d601-4cf4-a7bc-a4a71bdea6da.png)
